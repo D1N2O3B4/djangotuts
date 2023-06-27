@@ -1,10 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
 <h1>Hello {{name}}<br>
     Your id is {{index_no}}<br>
     Course of study is {{course}}
 </h1>
-<form method="" action="counter">
+<form method="post" action="{%url 'counts'%}">
+    {% csrf_token %}
     <textarea name="text" rows=25 cols=100></textarea><br>
     <input type="submit"/>
-    <p1>Number of words are: {{text}}</p1>
+    <p1>Number of words are:{{text}} </p1>
 </form>
