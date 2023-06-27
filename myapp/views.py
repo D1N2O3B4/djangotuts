@@ -3,4 +3,14 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('<h1>Hello Waguan</h1>')
+    context = {
+        'name':'David Boateng',
+        'index_no':10888204,
+        'course':'Computer Science',
+    }   
+    return render(request,'index.html',context)
+
+def count(request):
+    text = len(request.GET['text'].split())
+
+    return render(request,'index.html',{'text':text})
