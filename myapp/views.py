@@ -11,6 +11,6 @@ def index(request):
     return render(request,'index.html',context)
 
 def count(request):
-    text = len(request.GET['text'].split())
+    text = len(request.POST['text'].split())
 
     return render(request,'index.html',{'text':text})
