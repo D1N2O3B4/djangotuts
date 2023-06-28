@@ -4,3 +4,8 @@ from django.db import models
 class Feature:
     title: str
     content: str
+
+class Facts:
+    ratings: int
+    title: str
+    description: str
